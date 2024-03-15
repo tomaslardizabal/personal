@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <section class="meta">
+            <meta charset="utf-8"> 
+            <meta name="viewport" content="width=device-width"> <!--La pagina se adapta al ancho de la pantalla-->
+            <title>Portfolio de Tomás 🧑‍💻</title>
+            <meta name="description" content="Portfolio de Tomás Lardizábal, estudiante de Sistemas y desarrollo.">
+            <!--OPEN GRAPH: etiquetas que para cuando compartimos se vea bien-->
+            <meta property="og:title" content="Portfolio de Tomás.">
+            <meta property="og:description" content="Portfolio de un estudiante de Sistemas.">
+            <meta property="og:image" content="/images/tl.jpg">
+            <meta property="og:image:alt" content="Logo de TL.">
+            <link rel="alternate" href="mipagina/en-ingles" hreflang="es-ES">
+            <!--Pagina ppal.-->
+            <link rel="canonical" href="https://tomas.lardizabal">
+            <meta name="robots" content="index, follow">
+            <meta name="theme-color" content="#09f">
+            <link rel="icon" type="image/jpg" href="images/tl.jpg">
+        </section>
+        <style>
+            header{  
+                display: grid; 
+                width: 100%;               
+            }
+            .cabecera{
+                grid-template-columns:  repeat(
+                    auto-fit, minmax(100px, 1fr)
+                );
+                grid-column: 1/-1;
+                background: lightsalmon;
+                border: 3px solid black;
+                border-radius: 10px;                
+                display: grid;       
+                padding: 4px;
+                align-items: center;
+            }
+            .cabecera img{
+                width: 50%;
+                height: auto;
+                grid-column-start: span 1;
+                /*grid-column-start: 1;
+                grid-column-end: 2;*/
+            }
+            .cabecera h1{
+                grid-column-start: 2;
+                grid-column-end: 6;
+                text-align: center;
+            }
+            .cabecera button
+            {
+                background-color: red;
+                color: white;
+                border-width: 2px ; 
+                border-radius: 50px;
+                width: 52px;
+                height: 52px;
+                margin-left: 50%;   
+                
+            }
+            .menu{                
+                grid-template-columns:  repeat(
+                    auto-fit, minmax(100px, 1fr)
+                );
+                grid-column-start: 1;
+                grid-column-end: 3; 
+                background: lightsalmon;
+                border: 3px solid black;
+                border-radius: 10px;
+                display: grid;       
+                padding: 4px;
+                text-align: center;
+                margin: 2%;
+            }
+            .link:hover{
+                 color: black;                 
+            }
+            body{
+                background: rgb(255, 209, 209);
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            }            
+            
+            
+            .container-father{               
+                background-color: black;
+                border-radius: 5px;
+                width: 250px;   /*recordar que los pixeles no son*/
+                height: 250px;  /*unidades absolutas*/ 
+                border: 5px solid red;  
+                box-sizing: border-box;             
+            }
+            .container-child{
+                background-color: grey;
+                width: 50%; /* recordar que los pixeles no son*/
+                height: 50%;  /*unidades absolutas*/ 
+                margin: 62.5px; 
+                border: 3px solid red;
+                border-radius: 5px;                 
+            }                        
+            
+
+            /* MODELO DE LA CAJA            
+                PADDING: espacio que está entre el contenido y el border.
+                BORDER:
+                MARGIN:
+                ANCHO TOTAL DE UNA CAJA: content box + padding + border
+                BOX-SIZING: context-box -- el ancho y el alto que le damos 
+                            es unicamente el del contenido, a eso se le agrega el padding y el border.
+                            border-box -- el ancho y el alto que le damos va ser el tamaño de la caja, es decir desde el borde hacia dentro.
+            */
+            /* POSITION: por default los elementos están estáticos
+                    -ABSOLUTE: podremos poner la coordenadas de dónde   queremos que esté este elemento dentro de la página.
+                    -RELATIVE: se utiliza para que los hijos se posiciones de manera relativa dentro de ese elemento.
+                    -FIXED: las coordenadas que se le ponen quedan relativas a la pantalla y se queda fija aunque hagamos scroll. No le afecta el position relative del padre.
+                    -STICKY: se queda fijo dentro de su contenedor.
+            */
+            /* APILAMIENTO: hace referencia a que la web es en 3D, por lo que existe un eje Z que hace a la profundidad por lo que hay elementos que pueden estar detras, o delante, de otros. 
+            */
+            /* DISPLAY FLEX: propiedad que establece como se tiene que comportar un contenedor respecto a sus hijos.
+            */
+        </style>
+    </head>
+    <body>
+        <header>
+            <section class="cabecera">
+                <img src="../Portfolio/images/tl.jpg" alt="TL" id="logo">
+                <h1 id="titulo">Portfolio de Tomás Lardizábal 🧑‍💻</h1>
+                <button id="btnMenu">Menu</button>
+            </section>            
+            <nav class="menu">
+                <a class="link" href="#carreraacademica">Carrera académica.</a>
+                <a class="link" href="#proyectos">Proyectos</a>
+                <a class="link" href="#formulario">Formulario</a>
+                <a class="link" href="https://google.com" target="_blank" rel="noreferrer">Google</a>                
+            </nav>
+        </header>
+        <main>
+            <p>Estudiante de Sistemas y desarrollo web.</p>
+            
+            <h3 id="carreraacademica">Carrera académica</h3>
+            
+            <ul>
+                <li class="list-item">Cursando cuarto año de ISI.</li>
+                <li class="list-item">Curso terminado de Git y GitHub.</li>
+            </ul>
+            
+            <h3>Mis tecnologías favoritas</h3>       
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>C#</li>                
+            </ul>
+            <h3 id="proyectos">Proyectos personales</h3>            
+            <section>
+                <article>
+                    <h4> Aplicación de gestión universitaria.</h4>
+                    <p>
+                        Desarrollo de una aplicación de gestión escolar bastante simple.
+                    </p>
+                    <small>Tecnologías utilizadas: C#, Entity Framework, MySQL.</small>
+                </article>
+            </section>
+            <section>
+                <article>               
+                    <h4>Este sitio web.</h4>                    
+                    <p>
+                        Desarrollo de un portfolio personal.
+                    </p>                
+                    <small>Tecnologías utilizadas: HTML.</small>            
+                </article>
+            </section>
+            <section> 
+                <h2 id="formulario">Formulario de contacto</h2>
+
+                <form method="post" action="/">
+                    <fieldset>
+                        <legend>Información personal</legend>
+                        <div>
+                            <label for="name">Nombre:</label>
+                            <input type="text" name="name" id="name" required>
+                        </div>
+                        <div>
+                            <label for="email">Email:</label>
+                            <input type="email" name="email" id="email">
+                        </div>
+                        <div>
+                            <label for="fecnac">Fecha de nacimiento:</label>
+                            <input type="datetime-local" name="fecnac" id="fecnac">
+                        </div>
+                        <button id="buttonOfForms">Enviar</button>
+                    </fieldset>
+                </form>
+                <br>
+            </section>
+            <div class="container-father">
+                <div class="container-child">
+
+                </div>
+            </div>
+            <br>
+            <img style="width: 100%; aspect-ratio: 960/720;" src="images/mini_yo.jpg" alt="Foto mia de chiquito." loading="lazy">
+            <br>
+        </main>
+        <button id="openModal">Ver mas información</button>
+        <dialog id="dialog">
+            <h1>Probando como abrir una modal</h1>
+            <p>
+                Como, usando JS dentro de una etiqueta script, podemos 
+                darle interactividad a la pagina.
+            </p>
+            <button id="closeModal">Cerrar</button>
+        </dialog>
+        <script>
+            window.openModal.addEventListener('click', () => {
+                window.dialog.showModal()
+            } )
+
+            window.closeModal.addEventListener('click', () => {
+                window.dialog.close()
+            } )
+        </script>
+        <footer>
+            <br>
+            Copyright 2023            
+            <a href="mailto:poty.2000.tl@gmail.com">Enviame un correo.</a>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                background: lightblue;
+            }
+            div{
+                display: grid;
+                grid-template-columns: repeat(
+                    auto-fill, /*segun el tamaño minimo que le ponemos, acomoda la columna hasta que entre otra*/
+                    /*auto-fit: ajusta el tamaño hasta los limites*/
+                    minmax(200px, 1fr)
+                );
+                gap: 10px 20px;
+                max-width: 650px;
+                margin: 0 auto;
+            }
+            img{
+                border-radius: 8px;
+                width: 100%;
+                height: auto;
+            }
+        </style>
+    </head>
+    <body>        
+        <main>
+            <div>
+                <img src="https://cdn-0.motocrossactionmag.com/wp-content/uploads/2023/06/2024-BETA-300RX-RIGHT.png">
+                <img src="https://cdn-0.motocrossactionmag.com/wp-content/uploads/2023/06/2024-BETA-300RX-RIGHT.png">
+                <img src="https://cdn-0.motocrossactionmag.com/wp-content/uploads/2023/06/2024-BETA-300RX-RIGHT.png">
+                <img src="https://cdn-0.motocrossactionmag.com/wp-content/uploads/2023/06/2024-BETA-300RX-RIGHT.png">
+                <img src="https://cdn-0.motocrossactionmag.com/wp-content/uploads/2023/06/2024-BETA-300RX-RIGHT.png">
+                <img src="https://cdn-0.motocrossactionmag.com/wp-content/uploads/2023/06/2024-BETA-300RX-RIGHT.png">
+                <img src="https://cdn-0.motocrossactionmag.com/wp-content/uploads/2023/06/2024-BETA-300RX-RIGHT.png">
+            </div>
+        </main>    
+    </body>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .container{
+                background: lightsalmon;
+                border: 3px solid black;
+                border-radius: 10px;                
+                display: grid; /*convertimos al container a cuadricula*/
+                /*grid-template-columns: 150px auto 100px;*/
+                grid-template-columns: 19% 60% 18%;                
+                /*grid-auto-rows: 150px; altura para las filas que se crean automaticamente*/
+                gap: 16px;
+                padding: 4px;
+            }
+            .container div{
+                background: lightblue;
+                border: 2px solid red;
+                border-radius: 6px;
+                display: grid;
+                grid-template-columns: repeat(
+                    auto-fill, /*segun el tamaño minimo que le ponemos, acomoda la columna hasta que entre otra*/
+                    /*auto-fit: ajusta el tamaño hasta los limites*/
+                    minmax(100px, 1fr)
+                );
+                gap: 10px 20px;
+                width: 100%;
+                margin: 0 auto;
+            }
+            .container div:first-child{
+                /*background: lightgreen;
+                border: 3px solid black;*/
+                /*Lo que hacemos con esto es darle la columna/fila donde queremos que arranque y termine esa celda*/
+                /*grid-column-start: 1;
+                grid-column-end: 2; */                          
+                /*grid-row: 1 / 4;
+                grid-column: 1 / 3;*/
+                /*grid-row-end: 4;   */  
+                /*Mientras que de esta otra manera le decimos cuantas filas/columnas queremos que ocupe*/
+                /*grid-column-start: span 2;
+                grid-column-end: span 2;*/
+            }
+            .container img{
+                border-radius: 8px;
+                width: 100%;
+                height: auto;
+                grid-template-columns: repeat(
+                    auto-fill,
+                    minmax(200px, 1fr)
+                );
+            }
+        </style>
+    </head>
+    <body>        
+        <main>
+            <section class="container">
+                <div>
+                    <img src="https://cdn-0.motocrossactionmag.com/wp-content/uploads/2023/06/2024-BETA-300RX-RIGHT.png">
+                </div>
+                <div>
+                    <img src="https://cdn-0.motocrossactionmag.com/wp-content/uploads/2023/06/2024-BETA-300RX-RIGHT.png">
+                </div>
+                <div>
+                    <img src="https://cdn-0.motocrossactionmag.com/wp-content/uploads/2023/06/2024-BETA-300RX-RIGHT.png">
+                </div>                                
+            </section>
+            <p>
+                GRID: sistema de maquetación BIDIMENSIONAL.
+            </p>
+        </main>    
+    </body>
